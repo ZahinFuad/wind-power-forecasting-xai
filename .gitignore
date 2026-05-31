@@ -1,0 +1,37 @@
+# Private and local files
+paper/
+*.pdf
+*Camera_Ready*
+*Response-to-Reviewers*
+*Payment Proof*
+*Studentship Proof*
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated research artifacts
+artifacts/
+scripts/archive/
+*.npy
+*.npz
+*.h5
+*.keras
+*.pkl
+*.joblib
+*.png
+*.jpg
+*.jpeg
+
+# Notebook and tool checkpoints
+.ipynb_checkpoints/

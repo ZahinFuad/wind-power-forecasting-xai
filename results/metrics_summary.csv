@@ -1,0 +1,9 @@
+model,mae,rmse,notes
+TCN 15 epochs,0.1195,0.1595,Strongest MAE among saved baseline results
+LSTM,0.1207,0.1567,Strongest RMSE among saved baseline results
+CNN-LSTM,0.1212,0.1596,Competitive hybrid baseline
+GRU,0.1293,0.1661,Recurrent baseline
+Transformer,0.1754,0.2226,Underperformed compared with recurrent and convolutional models
+TCN original,0.1232,0.1595,Earlier TCN run
+TCN improved,0.1411,0.1794,Experimental variant
+TCN option A,0.1330,0.1708,Experimental variant
