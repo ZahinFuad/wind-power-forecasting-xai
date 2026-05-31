@@ -9,6 +9,7 @@ from scipy.stats import spearmanr
 from tensorflow.keras.models import load_model
 
 ROOT = Path(__file__).resolve().parents[1]
+SEED = 42
 DATA_DIR = ROOT / "artifacts" / "data"
 MODEL_DIR = ROOT / "artifacts" / "models"
 METRICS_DIR = ROOT / "artifacts" / "metrics"
@@ -17,6 +18,8 @@ METRICS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def main():
+    np.random.seed(SEED)
+
     model = load_model(MODEL_DIR / "tcn_baseline_model_15epochs.h5")
     X_test = np.load(DATA_DIR / "X_test.npy")
     X_explain_orig = X_test[100:110]
@@ -96,7 +99,9 @@ def main():
         reshaped = flat.reshape((-1, time_steps, num_features))
         return model.predict(reshaped)
 
-    lime_explainer = LimeTabularExplainer(X_bg, feature_names=feature_names, mode="regression")
+    lime_explainer = LimeTabularExplainer(
+        X_bg, feature_names=feature_names, mode="regression", random_state=SEED
+    )
     start_lime = time()
     for i in range(10):
         lime_explainer.explain_instance(X_flat[i], model_predict, num_features=10)

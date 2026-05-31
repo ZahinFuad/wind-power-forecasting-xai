@@ -8,6 +8,7 @@ import shap
 from tensorflow.keras.models import load_model
 
 ROOT = Path(__file__).resolve().parents[1]
+SEED = 42
 DATA_DIR = ROOT / "artifacts" / "data"
 MODEL_DIR = ROOT / "artifacts" / "models"
 FIGURE_DIR = ROOT / "artifacts" / "figures"
@@ -29,6 +30,8 @@ BASE_FEATURES = [
 
 
 def main():
+    np.random.seed(SEED)
+
     model = load_model(MODEL_DIR / "tcn_baseline_model_15epochs.h5")
     X_test = np.load(DATA_DIR / "X_test.npy")
 

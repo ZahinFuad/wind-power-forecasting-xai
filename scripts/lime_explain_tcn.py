@@ -7,6 +7,7 @@ from lime.lime_tabular import LimeTabularExplainer
 from tensorflow.keras.models import load_model
 
 ROOT = Path(__file__).resolve().parents[1]
+SEED = 42
 DATA_DIR = ROOT / "artifacts" / "data"
 MODEL_DIR = ROOT / "artifacts" / "models"
 METRICS_DIR = ROOT / "artifacts" / "metrics"
@@ -27,6 +28,8 @@ BASE_FEATURES = [
 
 
 def main():
+    np.random.seed(SEED)
+
     model = load_model(MODEL_DIR / "tcn_baseline_model_15epochs.h5")
     X_test = np.load(DATA_DIR / "X_test.npy")
 
@@ -52,6 +55,7 @@ def main():
         feature_names=feature_names,
         mode="regression",
         verbose=True,
+        random_state=SEED,
     )
 
     lime_summary = []

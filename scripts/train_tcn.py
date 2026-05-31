@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+import tensorflow as tf
 from tensorflow.keras.layers import (
     Activation,
     Add,
@@ -18,6 +19,7 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 
 ROOT = Path(__file__).resolve().parents[1]
+SEED = 42
 DATA_DIR = ROOT / "artifacts" / "data"
 MODEL_DIR = ROOT / "artifacts" / "models"
 METRICS_DIR = ROOT / "artifacts" / "metrics"
@@ -50,6 +52,8 @@ def tcn_block(x, filters, kernel_size, dilation_rate, dropout_rate):
 
 
 def main():
+    tf.keras.utils.set_random_seed(SEED)
+
     X_train = np.load(DATA_DIR / "X_train.npy")
     y_train = np.load(DATA_DIR / "y_train.npy")
     X_test = np.load(DATA_DIR / "X_test.npy")

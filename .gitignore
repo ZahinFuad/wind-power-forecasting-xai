@@ -30,6 +30,8 @@ scripts/archive/
 *.pkl
 *.joblib
 *.png
+!results/figures/
+!results/figures/*.png
 *.jpg
 *.jpeg
 
