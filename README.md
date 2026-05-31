@@ -140,18 +140,3 @@ python scripts/evaluate_xai.py
 This repository accompanies a research manuscript on wind power forecasting using deep learning models and explainable AI methods. The research was presented at the BIM 2025 conference and is currently in the process of being published as a book chapter by Taylor & Francis. The manuscript is not included in this public repository while publication is pending.
 
 A formal citation and manuscript link will be added after publication.
-
-## Citation
-
-If you use this repository before the book chapter is published, please cite it as an unpublished research artifact and cite the final Taylor & Francis chapter once available.
-
-```bibtex
-@incollection{fuad_tcn_xai_wind_forecasting_forthcoming,
-  author    = {Fuad, Khondaker Zahin and Ahmed, Firoz},
-  title     = {TCN-XAI: An Explainable Framework for Short-Term Wind Forecasting Using Dilated Temporal Convolutional Networks},
-  booktitle = {Forthcoming Taylor & Francis book chapter},
-  publisher = {Taylor & Francis},
-  year      = {forthcoming},
-  note      = {Presented at BIM 2025}
-}
-```
