@@ -2,7 +2,7 @@
 
 This repository contains a research experiment on short-term wind power forecasting using deep learning models and explainable AI methods. The project compares several neural architectures for one-hour-ahead wind power prediction from hourly weather observations, then applies SHAP and LIME to interpret the strongest model's behavior.
 
-This work was completed as part of my master's-level computer science research portfolio.
+This work was completed as part of my master's-level computer science research portfolio. The research was presented at the BIM 2025 conference and is currently in the process of being published as a Taylor & Francis book chapter.
 
 ## Research Focus
 
@@ -13,7 +13,7 @@ This work was completed as part of my master's-level computer science research p
 
 ## Associated Manuscript
 
-This repository accompanies a research manuscript on wind power forecasting using deep learning models and explainable AI methods. The manuscript is currently awaiting publication/acceptance and is not included in this public repository.
+This repository accompanies a research manuscript on wind power forecasting using deep learning models and explainable AI methods. The research was presented at the BIM 2025 conference and is currently in the process of being published as a book chapter by Taylor & Francis. The manuscript is not included in this public repository while publication is pending.
 
 The code and summarized experimental results are shared here as part of my academic research portfolio. A citation and manuscript link will be added after publication.
 
@@ -21,22 +21,22 @@ The code and summarized experimental results are shared here as part of my acade
 
 ```text
 .
-├── data/raw/Location1.csv
-├── docs/
-│   ├── methodology.md
-│   └── results_summary.md
-├── results/metrics_summary.csv
-├── scripts/
-│   ├── preprocessing.py
-│   ├── train_tcn.py
-│   ├── train_lstm_baseline.py
-│   ├── train_gru_baseline.py
-│   ├── train_cnn_lstm_baseline.py
-│   ├── train_transformer_baseline.py
-│   ├── shap_explain_tcn.py
-│   ├── lime_explain_tcn.py
-│   └── evaluate_xai.py
-└── requirements.txt
+|-- data/raw/Location1.csv
+|-- docs/
+|   |-- methodology.md
+|   `-- results_summary.md
+|-- results/metrics_summary.csv
+|-- scripts/
+|   |-- preprocessing.py
+|   |-- train_tcn.py
+|   |-- train_lstm_baseline.py
+|   |-- train_gru_baseline.py
+|   |-- train_cnn_lstm_baseline.py
+|   |-- train_transformer_baseline.py
+|   |-- shap_explain_tcn.py
+|   |-- lime_explain_tcn.py
+|   `-- evaluate_xai.py
+`-- requirements.txt
 ```
 
 Generated arrays, models, figures, and local manuscript files are excluded from the public repo. When scripts are run, those outputs are written under `artifacts/`.
@@ -93,4 +93,3 @@ The strongest saved results were from the TCN and LSTM models. Full summarized m
 | Transformer | 0.1754 | 0.2226 |
 
 The SHAP and LIME analyses both indicated that recent wind speed at 100 meters was one of the most influential predictors for wind power output.
-
